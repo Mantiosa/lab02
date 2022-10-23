@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
         if(selectedOption.equals(defaultCharsSelectedOption)){
             String userInputText = this.edPhrase.getText().toString();
             if(TextUtils.isEmpty(userInputText)){
-                this.tvMain.setText("empty");
+                this.tvMain.setText("");
+                Toast toast = Toast.makeText(getApplicationContext(), "It's empty!", 3);
+                toast.show();
             }
             else {
                 String charsCount = String.valueOf(getCharsCount(userInputText));;
@@ -51,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
         if(selectedOption.equals(defaultWordsSelectedOption)){
             String userInputText = this.edPhrase.getText().toString();
             if(TextUtils.isEmpty(userInputText)){
-                this.tvMain.setText("empty");
+                this.tvMain.setText("");
+                Toast toast = Toast.makeText(getApplicationContext(), "It's empty!", 3);
+                toast.show();
             }
             else {
                 String wordsCount = String.valueOf(getWordsCount(userInputText));
